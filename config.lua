@@ -1,4 +1,4 @@
-RulePath = "/app/luarepo/ngx_lua_waf/wafconf/"
+RulePath = "/app/ngx_lua_waf/wafconf/"
 attacklog = "on"
 logdir = "/app/logs/nginx/hack/"
 UrlDeny="on"
@@ -6,7 +6,7 @@ Redirect="on"
 CookieMatch="on"
 postMatch="on" 
 whiteModule="on" 
-black_fileExt={"php","jsp"}
+black_fileExt={"asp","jsp"}
 ipWhitelist={"127.0.0.1"}
 ipBlocklist={"1.0.0.1"}
 CCDeny="off"
