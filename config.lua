@@ -1,6 +1,6 @@
-RulePath = "/usr/local/nginx/conf/waf/wafconf/"
+RulePath = "/app/luarepo/ngx_lua_waf/wafconf/"
 attacklog = "on"
-logdir = "/usr/local/nginx/logs/hack/"
+logdir = "/app/logs/nginx/hack/"
 UrlDeny="on"
 Redirect="on"
 CookieMatch="on"
