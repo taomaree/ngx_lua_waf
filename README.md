@@ -25,20 +25,24 @@ ngx_lua如果是0.9.2以上版本，建议正则过滤函数改为ngx.re.find，
 
 ###使用说明：
 
-nginx安装路径假设为:/usr/local/nginx/conf/
+``
+mkdir -p /app/logs/nginx/hack /app/ngx_lua_waf
 
-把ngx_lua_waf下载到conf目录下,解压命名为waf
+git clone https://github.com/taomaree/ngx_lua_waf.git /app
+``
 
 在nginx.conf的http段添加
 
-		lua_package_path "/usr/local/nginx/conf/waf/?.lua";
+``
+	lua_package_path "/app/ngx_lua_waf/?.lua";
         lua_shared_dict limit 10m;
-        init_by_lua_file  /usr/local/nginx/conf/waf/init.lua; 
-    	access_by_lua_file /usr/local/nginx/conf/waf/waf.lua;
+        init_by_lua_file  /app/ngx_lua_waf/init.lua; 
+    	access_by_lua_file /app/ngx_lua_waf/waf.lua;
+``
 
 配置config.lua里的waf规则目录(一般在waf/conf/目录下)
 
-        RulePath = "/usr/local/nginx/conf/waf/wafconf/"
+        RulePath = "/app/ngx_lua_waf/wafconf/"
 
 绝对路径如有变动，需对应修改
 
